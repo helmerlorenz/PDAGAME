@@ -19,9 +19,8 @@ tracks/0/keys = {
 "values": [Rect2(0, 0, 64, 64)]
 }
 
-[sub_resource type="Animation" id="Animation_ai16o"]
-resource_name = "idle"
-length = 2.0
+[sub_resource type="Animation" id="Animation_sr02u"]
+resource_name = "fall"
 loop_mode = 1
 step = 0.25
 tracks/0/type = "value"
@@ -31,10 +30,10 @@ tracks/0/path = NodePath("PlayerAnimator/Sprite2D:region_rect")
 tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Rect2(0, 0, 64, 64), Rect2(64, 0, 64, 64), Rect2(128, 0, 64, 64), Rect2(192, 0, 64, 64), Rect2(256, 0, 64, 64), Rect2(320, 0, 64, 64), Rect2(384, 0, 64, 64), Rect2(448, 0, 64, 64), Rect2(448, 0, 64, 64)]
+"values": [Rect2(640, 0, 64, 64), Rect2(640, 0, 64, 64), Rect2(704, 0, 64, 64)]
 }
 
 [sub_resource type="Animation" id="Animation_85nbx"]
@@ -72,8 +71,9 @@ tracks/0/keys = {
 "values": [Rect2(906, 0, 64, 64), Rect2(970, 0, 64, 64), Rect2(1034, 0, 64, 64), Rect2(906, 0, 64, 64)]
 }
 
-[sub_resource type="Animation" id="Animation_sr02u"]
-resource_name = "fall"
+[sub_resource type="Animation" id="Animation_ai16o"]
+resource_name = "idle"
+length = 2.0
 loop_mode = 1
 step = 0.25
 tracks/0/type = "value"
@@ -83,10 +83,10 @@ tracks/0/path = NodePath("PlayerAnimator/Sprite2D:region_rect")
 tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Rect2(640, 0, 64, 64), Rect2(640, 0, 64, 64), Rect2(704, 0, 64, 64)]
+"values": [Rect2(0, 0, 64, 64), Rect2(64, 0, 64, 64), Rect2(128, 0, 64, 64), Rect2(192, 0, 64, 64), Rect2(256, 0, 64, 64), Rect2(320, 0, 64, 64), Rect2(384, 0, 64, 64), Rect2(448, 0, 64, 64), Rect2(448, 0, 64, 64)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b8es0"]
@@ -104,11 +104,13 @@ height = 28.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ai16o")
+speed = 7.0
+jump_power = 15.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-1, -2)
 offset = Vector2(0, -15)
-zoom = Vector2(6, 6)
+zoom = Vector2(3, 3)
 
 [node name="PlayerAnimator" type="Node2D" parent="." node_paths=PackedStringArray("player_controller", "animation_player", "sprite")]
 script = ExtResource("2_o7tti")
