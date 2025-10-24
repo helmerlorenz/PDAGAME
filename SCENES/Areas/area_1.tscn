@@ -9,3 +9,15 @@ tile_map_data = PackedByteArray("AAAEAAMAAAABAAIAAAAEAAIAAAABAAEAAAAEAAEAAAABAAA
 
 [node name="AreaExit" parent="." index="2"]
 position = Vector2(568, -48)
+
+[node name="Coin1" parent="Coin" index="0"]
+position = Vector2(392, -72)
+
+[node name="Coin2" parent="Coin" index="1"]
+position = Vector2(336, -24)
+
+[node name="Coin3" parent="Coin" index="2"]
+position = Vector2(-48, -24)
+
+[node name="Coin4" parent="Coin" index="3"]
+position = Vector2(200, -40)
